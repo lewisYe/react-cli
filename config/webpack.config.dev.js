@@ -11,6 +11,8 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: {
     app: [
+      'webpack-dev-server/client?http://localhost:8000',
+      'webpack/hot/only-dev-server',
       APP_FILE
     ]
   },
