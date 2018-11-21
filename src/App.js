@@ -1,14 +1,27 @@
 import React from 'react';
 import { HashRouter } from "react-router-dom";
 import { hot } from 'react-hot-loader'
-import AppRoute from './components/AppRoute';
+import { Provider } from 'react-redux';
+import configureStore from './store/index';
+import { Switch } from 'react-router-dom';
+import routes from './routes/index';
+import { RouteWithSubRoutes } from './util'
 
-class App extends React.Component{
-  render(){
-    return(
-      <HashRouter>
-        <AppRoute/>
-      </HashRouter>
+const store = configureStore();
+class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <HashRouter>
+          <Switch>
+            {
+              routes && routes.map((route, index) => (
+                <RouteWithSubRoutes key={index} {...route} />
+              ))
+            }
+          </Switch>
+        </HashRouter>
+      </Provider>
     )
   }
 }

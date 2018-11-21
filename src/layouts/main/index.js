@@ -1,13 +1,16 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import logoImage from '../../../logo.png';
+import { RouteWithSubRoutes } from '../../util';
 import './index.scss';
+
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
 export default class Main extends React.Component {
   render() {
+    const { routes, location } = this.props
     return (
       <Layout style={{ height: '100%' }}>
         <Header className="layout-header">
@@ -15,7 +18,7 @@ export default class Main extends React.Component {
             <img src={logoImage} />
           </div>
           <div className="layout-title">
-            {/* lewisye */}
+            lewisye
           </div>
         </Header>
         <Layout>
@@ -54,8 +57,12 @@ export default class Main extends React.Component {
               <Breadcrumb.Item>App</Breadcrumb.Item>
             </Breadcrumb>
             <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
-              Content
-        </Content>
+              {
+                routes && routes.map((route, index) => (
+                  <RouteWithSubRoutes key={index} {...route} />
+                ))
+              }
+            </Content>
           </Layout>
         </Layout>
       </Layout>
