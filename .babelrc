@@ -5,6 +5,7 @@
   ],
   "plugins": [
     "react-hot-loader/babel",
+    ["@babel/plugin-transform-runtime"],
     ["import",{"libraryName": "antd","libraryDirectory": "es","style": "css"}]
   ]
 }
