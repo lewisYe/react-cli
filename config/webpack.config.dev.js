@@ -8,7 +8,7 @@ const APP_FILE = path.resolve(__dirname, '../src/index.js')
 
 module.exports = {
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: {
     app: [
       'webpack-dev-server/client?http://localhost:8000',
@@ -44,7 +44,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].js',
     chunkFilename: '[name].js',
     path: path.resolve(__dirname, '../dist'),
   },

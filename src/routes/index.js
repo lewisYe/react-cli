@@ -1,11 +1,11 @@
 import Main from '../layouts/main/index'
-import Home from '../components/home'
+import Login from '../layouts/login/index'
 import Test from '../components//test'
 
 const routes = [
   {
     path: "/login",
-    component: Home
+    component: Login
   },
   {
     path: "/",

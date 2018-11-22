@@ -5,8 +5,7 @@ const config = require('./config/webpack.config.dev.js');
 const options = {
   contentBase:'./dist',
   hot:true,
-  host:'localhost',
-  open:'google-chrome'
+  host:'localhost'
 }
 
 webpackDevServer.addDevServerEntrypoints(config,options);
