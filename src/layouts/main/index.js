@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import logoImage from '../../../logo.png';
+import logoImage from '../../static/logo.png';
 import { RouteWithSubRoutes } from '../../util';
 import './index.scss';
 
@@ -18,7 +18,7 @@ export default class Main extends React.Component {
             <img src={logoImage} />
           </div>
           <div className="layout-title">
-            lewisye
+            {/* lewisye */}
           </div>
         </Header>
         <Layout>

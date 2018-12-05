@@ -1,6 +1,6 @@
 import Main from '../layouts/main/index'
 import Login from '../layouts/login/index'
-import Test from '../components//test'
+import Test from '../pages//test'
 
 const routes = [
   {
