@@ -56,5 +56,14 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
+    alias: {
+      
+    },
+    modules: [
+      'node_modules',
+    ]
+  },
 }

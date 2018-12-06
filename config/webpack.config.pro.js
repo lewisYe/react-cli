@@ -61,6 +61,15 @@ module.exports = {
       canPrint: true
     })
   ],
+  resolve: {
+    extensions: ['.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
+    alias: {
+      
+    },
+    modules: [
+      'node_modules',
+    ]
+  },
   optimization: {
     runtimeChunk: {
       name: "manifest"
