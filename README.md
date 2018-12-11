@@ -18,13 +18,13 @@
 
 ## Quick Build
 
-使用 [lewisye-react](https://github.com/lewisYe/generator-react)快速搭建模板
+使用 [lewisye-react](https://github.com/lewisYe/generator-react) 快速搭建模板
 
 ## Project Structure
 ```txt
 .
 ├── README.md
-├── config // webpack 配置
+├── config // webpack配置
 │   ├── webpack.config.dev.js //开发环境
 │   └── webpack.config.pro.js //生产环境
 ├── dist //打包之后文件
