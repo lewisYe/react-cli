@@ -8,11 +8,13 @@
 
 ## Project Start
     
-      git clone https://github.com/lewisYe/react-cli.git
+    在目标目录clone项目  git clone https://github.com/lewisYe/react-cli.git
 
-      npm install
-      
-      npm start 
+    进入项目 cd react-cli 
+
+    安装依赖 npm install
+
+    项目启动 npm start 
 
 ## Quick Build
 
