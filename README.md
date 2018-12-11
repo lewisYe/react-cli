@@ -1,8 +1,8 @@
 # Technology Stack
-  1. React@16.6.3
-  2. React-redux@5.1.1
-  3. React-router@4.3.1
-  4. Webpack@4.25.1
+  1. react@16.6.3
+  2. react-redux@5.1.1
+  3. react-router@4.3.1
+  4. webpack@4.25.1
   5. antd@3.10.8
   6. axios@0.18.0
 
