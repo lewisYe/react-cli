@@ -8,7 +8,7 @@
 
 ## Project Start
     
-    在目标目录clone项目  git clone https://github.com/lewisYe/react-cli.git
+    在目标目录clone项目  git clone https://github.com/lewisYe/react-cli.git
 
     进入项目 cd react-cli 
 
@@ -41,7 +41,7 @@
     ├── App.js // 应用入口
     ├── components // 公共组件
     ├── index.css
-    ├── index.js //入口文件
+    ├── index.js //入口文件
     ├── layouts // 布局
     │   ├── login // 登录页
     │   │   ├── index.js
@@ -60,7 +60,7 @@
     ├── sagas
     │   ├── index.js
     │   └── test.js
-    ├── services // 请求库
+    ├── services // 请求库
     │   └── request.js
     ├── static // 静态文件
     │   └── logo.png
