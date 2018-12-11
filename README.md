@@ -6,10 +6,12 @@
   5. antd@3.10.8
   6. axios@0.18.0
 
-#### Project Start
+## Project Start
     
       git clone https://github.com/lewisYe/react-cli.git
+
       npm install
+      
       npm start 
 
 ## Quick Build
