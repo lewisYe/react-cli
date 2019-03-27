@@ -10,8 +10,12 @@ const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
 export default class Main extends React.Component {
+  componentDidMount(){
+    
+  }
   render() {
     const { routes, location } = this.props
+    
     return (
       <Layout style={{ height: '100%' }}>
         <Header className="layout-header">

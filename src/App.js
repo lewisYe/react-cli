@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { HashRouter, BrowserRouter } from "react-router-dom";
 import { hot } from 'react-hot-loader'
 import { Provider } from 'react-redux';
@@ -13,6 +13,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <HashRouter>
+        <Suspense fallback={<div>loading</div>}>
           <Switch>
             {
               routes && routes.map((route, index) => (
@@ -20,6 +21,7 @@ class App extends React.Component {
               ))
             }
           </Switch>
+          </Suspense>
         </HashRouter>
       </Provider>
     )
