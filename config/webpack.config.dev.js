@@ -24,11 +24,36 @@ module.exports = {
         loader: "babel-loader"
       },
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.css$/,
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [require('autoprefixer')()]
+            }
+          },
+        ],
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [require('autoprefixer')()]
+            }
+          },
+          'less-loader',
         ],
       },
       {
@@ -58,7 +83,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
+    extensions: ['.js', '.jsx', '.less', '.css'], //后缀名自动补全
     alias: {
       
     },

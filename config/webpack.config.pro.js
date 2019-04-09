@@ -62,7 +62,7 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
+    extensions: ['.js', '.jsx', '.less', '.css'], //后缀名自动补全
     alias: {
       
     },

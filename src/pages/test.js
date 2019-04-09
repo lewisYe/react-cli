@@ -18,7 +18,7 @@ export default class Test extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.onClick}>点击测试</Button>
+        <Button onClick={this.onClick}>登录页</Button>
       </div>
     )
   }
