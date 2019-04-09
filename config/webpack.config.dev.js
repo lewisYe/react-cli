@@ -2,7 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
-var OpenBrowserPlugin = require('open-browser-webpack-plugin')
+const HappyPack = require('happypack');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 
 const APP_FILE = path.resolve(__dirname, '../src/index.js') 
 
@@ -21,7 +22,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        use: 'happypack/loader?id=js'
       },
       {
         test: /\.css$/,
@@ -77,6 +78,11 @@ module.exports = {
     new OpenBrowserPlugin({ url: 'http://localhost:8000' }),
     new HtmlWebpackPlugin({
       template: './public/index.html'
+    }),
+    new HappyPack({
+      id: 'js',
+      threads: 4,
+      loaders: [ 'babel-loader' ]
     }),
     new CleanWebpackPlugin(['dist']),
     new webpack.NamedModulesPlugin(),
