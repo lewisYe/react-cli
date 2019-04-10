@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import logoImage from '../../static/logo.png';
 import { RouteWithSubRoutes } from '../../util';
@@ -18,11 +18,13 @@ export default class Main extends React.Component {
         <div className={style.title}>welcome to react-cli</div>
         <Link to="/test">子页面</Link>
         <div className={style.children}>
-          {
-            routes && routes.map((route, index) => (
-              <RouteWithSubRoutes key={index} {...route} />
-            ))
-          }
+          <Suspense fallback={<div>loading</div>}>
+            {
+              routes && routes.map((route, index) => (
+                <RouteWithSubRoutes key={index} {...route} />
+              ))
+            }
+          </Suspense>
         </div>
       </div>
     )
