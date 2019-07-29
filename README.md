@@ -24,49 +24,79 @@
 ```txt
 .
 ├── README.md
-├── config // webpack配置
-│   ├── webpack.config.dev.js //开发环境
-│   └── webpack.config.pro.js //生产环境
-├── dist //打包之后文件
-│   ├── app.21cd9856d748e6036297.css
-│   ├── app.js
-│   ├── index.html
-│   └── manifest.21cd9856d748e6036297.js
+├── config
+│   ├── webpack.config.dev.js // 开发环境配置
+│   └── webpack.config.pro.js // 生成环境配置
+├── dist // 打包之后的输出路径
+│   ├── assets
+│   │   ├── 0.3833f0bba653993cb1a3.css
+│   │   ├── 1.3833f0bba653993cb1a3.css
+│   │   ├── 1.3833f0bba653993cb1a3.js
+│   │   ├── 2.3833f0bba653993cb1a3.css
+│   │   ├── 4.3833f0bba653993cb1a3.css
+│   │   ├── 4.3833f0bba653993cb1a3.js
+│   │   ├── 5.3833f0bba653993cb1a3.css
+│   │   ├── 5.3833f0bba653993cb1a3.js
+│   │   ├── 6.3833f0bba653993cb1a3.css
+│   │   ├── 6.3833f0bba653993cb1a3.js
+│   │   ├── app.3833f0bba653993cb1a3.js
+│   │   ├── manifest.3833f0bba653993cb1a3.js
+│   │   └── vendors.3833f0bba653993cb1a3.js
+│   ├── images
+│   │   └── login.acd5515ea81f9d58d1cfd7df1ed2a614.png
+│   └── index.html
 ├── package-lock.json
 ├── package.json
 ├── public
-│   └── index.html //主文件
-├── server.js //本地开发web服务器node启动文件，也用于热更新
-└── src // 源文件目录
-    ├── App.js // 应用入口
-    ├── components // 公共组件
-    ├── index.css
-    ├── index.js //入口文件
-    ├── layouts // 布局
-    │   ├── login // 登录页
-    │   │   ├── index.js
-    │   │   └── index.scss
-    │   └── main // 主页面
+│   └── index.html
+├── server.js // 开发启动配置
+└── src
+    ├── App.js
+    ├── components // 组件库
+    │   ├── ErrorBoundary
+    │   │   └── index.js
+    │   ├── IconSvg
+    │   │   └── index.js
+    │   └── Spin
     │       ├── index.js
-    │       └── index.scss
-    ├── locales // 本地静态
-    ├── pages // 业务页面
-    │   └── test.js
-    ├── reducers 
+    │       └── index.less
+    ├── index.css
+    ├── index.js
+    ├── layouts // 通用布局
+    │   ├── login
+    │   │   ├── index.js
+    │   │   └── index.less
+    │   └── main
+    │       ├── index.js
+    │       └── index.less
+    ├── reducers
     │   ├── index.js
-    │   └── test.js
-    ├── routes // 路由
+    │   └── template.js
+    ├── routes //路由配置
     │   └── index.js
     ├── sagas
     │   ├── index.js
-    │   └── test.js
-    ├── services // 请求库
-    │   └── request.js
-    ├── static // 静态文件
-    │   └── logo.png
+    │   └── template.js
+    ├── services
+    │   └── request.js // 请求库
+    ├── static // 本地静态文件
+    │   ├── images
+    │   │   └── logo.png
+    │   └── svgs
+    │       └── airport.svg
     ├── store
     │   └── index.js
-    └── util.js //工具函数
+    ├── utils //工具库
+    │   ├── constant.js // 常量
+    │   ├── importSvg.js // 引入svg
+    │   ├── locales.js // 文案
+    │   ├── promiseBindDispatch.js // promise包裹dispatch
+    │   ├── regs.js // 通用正则
+    │   └── routeWithSubRoutes.js // 路由
+    └── views // ui页面
+        └── template
+            ├── index.js
+            └── index.less
 
 ```
 

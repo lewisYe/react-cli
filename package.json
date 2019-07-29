@@ -11,7 +11,7 @@
     "build": "npm run clean && webpack --config config/webpack.config.pro.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "lewisYe",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -39,7 +39,9 @@
     "react-hot-loader": "^4.3.12",
     "rimraf": "^2.6.2",
     "style-loader": "^0.23.1",
+    "svg-sprite-loader": "^4.1.6",
     "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^2.1.0",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"

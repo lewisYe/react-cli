@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import logoImage from '../../static/logo.png';
-import { RouteWithSubRoutes } from '../../util';
+import RouteWithSubRoutes from '~utils/routeWithSubRoutes'
 import { Link } from 'react-router-dom'
 import style from './index.less';
 
@@ -16,7 +15,7 @@ export default class Main extends React.Component {
     return (
       <div className={style.container}>
         <div className={style.title}>welcome to react-cli</div>
-        <Link to="/test">子页面</Link>
+        <Link to="/template">子页面</Link>
         <div className={style.children}>
           <Suspense fallback={<div>loading</div>}>
             {

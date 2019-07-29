@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App';
 import './index.css';
-import ErrorBoundary from './components/errorBoundary';
+import ErrorBoundary from '~components/ErrorBoundary';
 
 ReactDOM.render(
   <ErrorBoundary>

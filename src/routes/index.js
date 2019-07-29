@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 const Main = lazy(() => import('../layouts/main/index'));
 const Login = lazy(() => import('../layouts/login/index'));
-const Test = lazy(() => import('../pages/test'));
+const Template = lazy(() => import('~views/template/index'));
 
 const routes = [
   {
@@ -13,8 +13,8 @@ const routes = [
     component: Main,
     routes: [
       {
-        path: "/test",
-        component: Test
+        path: "/template",
+        component: Template
       }
     ]
   }
