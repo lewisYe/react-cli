@@ -21,3 +21,7 @@ export default function configureStore(){
   sagaMiddleware.run(rootSaga)
   return store
 }
+
+export function getDispatch() {
+  return store.dispatch
+}
