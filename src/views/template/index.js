@@ -28,7 +28,7 @@ export default class Template extends React.Component {
     console.log(data)
     return (
       <div>
-        <Button onClick={this.onClick}>登录页</Button>
+        <Button onClick={this.onClick}>登录页2</Button>
         <div>
           <IconSvg type="airport" fill="#000000" />
         </div>
