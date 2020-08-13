@@ -1,8 +1,10 @@
 const cssnano = require('cssnano');
-const { merge } = require('webpack-merge');
 const path = require('path');
+const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
 const baseConfig = require('./webpack.config.base');
 
 const prodConfig = {
@@ -36,6 +38,13 @@ const prodConfig = {
         },
       },
     },
+    minimizer: [
+      new TerserPlugin({
+        exclude: /\.min\.js$/,
+        cache: true,
+        parallel: 4,
+      }),
+    ],
   },
 };
 

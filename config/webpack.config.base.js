@@ -22,7 +22,16 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        include: path.resolve(__dirname, '../src'),
+        use: [
+          {
+            loader: 'thread-loader',
+            options: {
+              workers: 4,
+            },
+          },
+          'babel-loader',
+        ],
       },
       {
         test: /\.css$/,
@@ -100,10 +109,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, '../public/index.html'),
-    //   filename: path.resolve(__dirname, '../dist/index.html')
-    // }),
     new FriendlyErrorsWebpackPlugin(),
   ],
   resolve: {
@@ -122,6 +127,5 @@ module.exports = {
       'node_modules',
     ],
   },
-  // stats: 'errors-only',
-// eslint-disable-next-line eol-last
+  stats: 'errors-only',
 };
