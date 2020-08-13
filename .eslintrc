@@ -26,7 +26,7 @@
     // 强制所有不包含双引号的 JSX 属性值使用双引号
     "jsx-quotes": [
       "error",
-      "prefer-double"
+      "prefer-single"
     ],
     // 不检测 props中的属性在 prop-type 是否存在
     "react/prop-types": [
@@ -65,7 +65,8 @@
     ],
     // 键值对中冒号后面加空格
     "key-spacing": [
-      "error", {
+      "error",
+      {
         "beforeColon": false,
         "afterColon": true
       }
@@ -74,6 +75,15 @@
     "object-curly-spacing": [
       "error",
       "always"
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
     ]
   },
   "env": {
@@ -86,7 +96,7 @@
     }
   },
   "settings": {
-    "import/resolver":{
+    "import/resolver": {
       "webpack": {
         "config": "config/webpack.config.dev.js" // 这是你设置alias的配置文件路径
       }

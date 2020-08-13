@@ -19,21 +19,22 @@ export default class Template extends React.Component {
       type: REQUEST_TEMPLATE,
       payload: 'go',
     }).then(() => {
-      this.props.history.push('/login');
-    }).catch(err => {
-      this.props.history.push('/login');
+      const { history } = this.props
+      history.push('/login');
+    }).catch((err) => {
+      const { history } = this.props
+      history.push('/login');
     })
   }
+
   render() {
-    let { data } = this.props.template;
-    console.log(data)
     return (
       <div>
         <Button onClick={this.onClick}>登录页</Button>
         <div>
-          <IconSvg type="airport" fill="#000000" />
+          <IconSvg type='airport' fill='#000000' />
         </div>
-        <img src={Logo} alt="" />
+        <img src={Logo} alt='' />
       </div>
     )
   }
