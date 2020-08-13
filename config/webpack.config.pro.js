@@ -1,13 +1,14 @@
 const cssnano = require('cssnano');
 const { merge } = require('webpack-merge');
-const baseConfig = require('./webpack.base');
-
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const baseConfig = require('./webpack.config.base');
 
 const prodConfig = {
   mode: 'production',
   output: {
-    publicPath: "./assets/"
+    publicPath: './assets/',
   },
   plugins: [
     new OptimizeCSSAssetsPlugin({
@@ -16,24 +17,24 @@ const prodConfig = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
-      filename: path.resolve(__dirname, '../dist/index.html')
+      filename: path.resolve(__dirname, '../dist/index.html'),
     }),
   ],
   optimization: {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          name: "vendor",
+          name: 'vendor',
           test: /[\\/]node_modules[\\/]/,
-          chunks: "all",
+          chunks: 'all',
         },
         common: {
-          name: "common",
-          chunks: "all",
+          name: 'common',
+          chunks: 'all',
           minSize: 1,
-          minChunks: 2
+          minChunks: 2,
         },
-      }
+      },
     },
   },
 };

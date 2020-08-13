@@ -1,7 +1,6 @@
 const { merge } = require('webpack-merge');
-const path = require('path');
 const webpack = require('webpack');
-const baseConfig = require('./webpack.base.js');
+const baseConfig = require('./webpack.config.base.js');
 
 const devConfig = {
   mode: 'development',

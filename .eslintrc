@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "semi": "error"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  },
+  "settings": {
+    "import/resolver":{
+      "webpack": {
+        "config": "config/webpack.config.dev.js" // 这是你设置alias的配置文件路径
+      }
+    }
+  }
+}
