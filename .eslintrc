@@ -2,7 +2,79 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
-    "semi": "error"
+    // 不允许未使用的变量，不检测参数
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "none"
+      }
+    ],
+    // 换行符必须为unix风格
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    // 缩进必须为2个空格
+    "indent": [
+      "error",
+      2,
+      {
+        // switch case子句缩进2个空格
+        "SwitchCase": 1
+      }
+    ],
+    // 强制所有不包含双引号的 JSX 属性值使用双引号
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    // 不检测 props中的属性在 prop-type 是否存在
+    "react/prop-types": [
+      0
+    ],
+    // 不检测不安全的target=「blank」
+    "react/jsx-no-target-blank": [
+      0
+    ],
+    // 可以直接对state赋值
+    "react/no-direct-mutation-state": [
+      0
+    ],
+    // 允许直接返回reactdom render方法的内容
+    "react/no-render-return-value": [
+      0
+    ],
+    // 不允许出现分号
+    "semi": [
+      "off",
+      "warn",
+      "never"
+    ],
+    // 建议使用 let 或 const 而不是 var
+    "no-var": "warn",
+    "react/no-deprecated": [
+      0
+    ],
+    // 逗号后面加空格
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    // 键值对中冒号后面加空格
+    "key-spacing": [
+      "error", {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    //规定对象字面量中大括号内是否允许加空格，也适用于ES6中的结构赋值和模块import和export
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ]
   },
   "env": {
     "browser": true,
