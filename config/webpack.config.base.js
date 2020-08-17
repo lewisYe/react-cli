@@ -4,6 +4,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UnicodePlugin = require('../src/plugins/unicode-plugin.js');
 
 const APP_FILE = path.resolve(__dirname, '../src/index.js');
 const APP_PATH = path.resolve(__dirname, '../dist');
@@ -95,6 +96,12 @@ module.exports = {
           symbolId: '[name]',
         },
       },
+      {
+        test: /locale\.js$/,
+        use: [
+          path.resolve(__dirname, '../src/loaders/unicode-loader.js'),
+        ],
+      },
     ],
   },
   plugins: [
@@ -110,6 +117,7 @@ module.exports = {
       template: './public/index.html',
     }),
     new FriendlyErrorsWebpackPlugin(),
+    new UnicodePlugin(),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -127,5 +135,5 @@ module.exports = {
       'node_modules',
     ],
   },
-  stats: 'errors-only',
+  // stats: 'errors-only',
 };

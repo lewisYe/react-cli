@@ -44,6 +44,9 @@
     "react/no-render-return-value": [
       0
     ],
+    "array-callback-return": [
+      0
+    ],
     // 不允许出现分号
     "semi": [
       "off",

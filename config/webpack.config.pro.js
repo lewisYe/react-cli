@@ -5,12 +5,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
+const APP_PATH = path.resolve(__dirname, '../dist/assets');
+
 const baseConfig = require('./webpack.config.base');
 
 const prodConfig = {
   mode: 'production',
   output: {
-    publicPath: './assets/',
+    filename: '[name]_[hash:8].js',
+    path: APP_PATH,
+    publicPath: '../assets/',
   },
   plugins: [
     new OptimizeCSSAssetsPlugin({
@@ -35,6 +39,13 @@ const prodConfig = {
           chunks: 'all',
           minSize: 1,
           minChunks: 2,
+        },
+        local: {
+          name: 'local',
+          chunks: 'all',
+          test: /[\\/]utils[\\/]locale.js/,
+          minSize: 1,
+          minChunks: 1,
         },
       },
     },

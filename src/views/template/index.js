@@ -6,6 +6,7 @@ import promiseBindDispatch from '~utils/promiseBindDispatch';
 import IconSvg from '~components/IconSvg';
 // import Styles from './index.less';
 import Logo from '~images/logo.png';
+import locale from '~utils/locale';
 
 @connect(({ template }) => ({ template }))
 export default class Template extends React.Component {
@@ -30,6 +31,7 @@ export default class Template extends React.Component {
   render() {
     return (
       <div>
+        <Button onClick={this.onClick}>{locale.name}</Button>
         <Button onClick={this.onClick}>登录页</Button>
         <div>
           <IconSvg type='airport' fill='#000000' />
