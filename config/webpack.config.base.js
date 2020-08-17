@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UnicodePlugin = require('../src/plugins/unicode-plugin.js');
@@ -112,9 +111,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name]_[contenthash:8].css',
-    }),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
     }),
     new FriendlyErrorsWebpackPlugin(),
     new UnicodePlugin(),

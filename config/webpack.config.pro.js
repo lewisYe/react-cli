@@ -14,7 +14,7 @@ const prodConfig = {
   output: {
     filename: '[name]_[hash:8].js',
     path: APP_PATH,
-    publicPath: '../assets/',
+    publicPath: './assets/',
   },
   plugins: [
     new OptimizeCSSAssetsPlugin({
